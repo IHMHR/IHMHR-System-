@@ -11,3 +11,21 @@ C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System
 C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.exe
 C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.pdb
 C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmDecisoes.resources
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\bin\Debug\IHMHR System.exe.config
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.exe
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.pdb
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\bin\Debug\IHMHR System.exe
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\bin\Debug\IHMHR System.pdb
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\bin\Debug\MySql.Data.dll
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.csprojResolveAssemblyReference.cache
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.Form1.resources
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmDecisoes.resources
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmMain.resources
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmSolucoes.resources
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.Properties.Resources.resources
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.csproj.GenerateResource.Cache
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.csproj.ResolveComReference.cache
+C:\Users\191524\Documents\Visual Studio 2012\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmExcel.resources
+C:\Users\Martinelli\Documents\Visual Studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.csproj.ResolveComReference.cache
+C:\Users\Martinelli\Documents\Visual Studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmExcel.resources
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmMaximo.resources

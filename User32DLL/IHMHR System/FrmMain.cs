@@ -58,6 +58,8 @@ namespace IHMHR_System
                 button4.Location = new System.Drawing.Point(0, 44);
                 button5.Location = new System.Drawing.Point(0, 66);
                 button6.Location = new System.Drawing.Point(0, 88);
+                button7.Location = new System.Drawing.Point(0, 110);
+                //button8.Location = new System.Drawing.Point(0, 132);
                 panel2.Visible = !panel2.Visible;
                 textBox5.Visible = !textBox5.Visible;
                 label5.Visible = !label5.Visible;
@@ -86,11 +88,13 @@ namespace IHMHR_System
             {
                 //Process.Start(@"shutdown", "-s -t 120 -c \"120 segundos\"");
                 panel1.Visible = !panel1.Visible;
-                button1.Visible = !button1.Visible;
+                //button1.Visible = !button1.Visible;
+                
                 button1.Focus();
                 button4.Visible = !button4.Visible;
                 button5.Visible = !button5.Visible;
                 button6.Visible = !button6.Visible;
+                button7.Visible = !button7.Visible;
                 radioButton1.Checked = true;
             }
             catch (Exception ex)
@@ -203,9 +207,12 @@ namespace IHMHR_System
 
         private void button6_Click(object sender, EventArgs e)
         {
-            try { 
-            panel2.Visible = !panel2.Visible;
-            panel2.Location = new System.Drawing.Point(0, 110);
+            try 
+            {
+                //button7.Location = new System.Drawing.Point(0, 205);
+                button7.Visible = !button7.Visible;
+                panel2.Visible = !panel2.Visible;
+                panel2.Location = new System.Drawing.Point(0, 110);
             if (textBox4.Text.Equals(""))
             {
                 Process[] processos = Process.GetProcesses();
@@ -371,8 +378,26 @@ namespace IHMHR_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString(), "Erro Label4d blClick", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message.ToString(), "Erro Label4 dblClick", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmMaximo maximo = new FrmMaximo();
+                maximo.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Erro Btn7 Click", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

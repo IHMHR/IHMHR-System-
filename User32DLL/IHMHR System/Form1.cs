@@ -15,56 +15,76 @@ namespace IHMHR_System
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string sql = string.Empty;
-            StreamReader sr = new StreamReader(@"C:\IHMHR\txt.txt");
-            //char[] spliter = {'|', ';'};
-            //string[] valores = new string[2000];
-            List<string> valores = new List<string>();
-            string[] texto = sr.ReadLine().Split(';');
-            int contador = 0;
-            foreach (var item in texto)
+            try
             {
-                contador++;
-                //valores[contador] = item;
-                valores.Add(item);
-            }
-            #region SQL
-            //sql = "INSERT INTO info VALUES (NULL,'+" valores[1] + "','" + valores[2] + "','" + valores[3].Replace("'", "~") + "','" + valores[4] + "','" + valores[5] + "','" + valores[6] + "')";    
-            /*sql = "INSERT INTO info VALUES ";
-            for (int i = 0; i < ((valores.Count-1) /6); i++)
-            {
-                sql += "(NULL,";
-                sql += "'" + valores[i] + "',";
-                sql += "'" + valores[i + 1] + "',";
-                sql += "'" + valores[i + 2].Replace("'", "~").Replace("´", "~") + "',";
-                sql += "'" + valores[i + 3] + "',";
-                sql += "'" + valores[i + 4] + "',";
-                sql += "'" + valores[i + 5] + "'";
-                sql += "),";
-            }
-            sql = sql.Substring(0, sql.Length - 1);
-            MessageBox.Show(sql);
-            Clipboard.SetText(sql);*/
-            #endregion
-            List<string> dados = CriarQuery(texto);
-            using (MySqlConnection con = new MySqlConnection("SERVER=127.0.0.1;DATABASE=relatorio;USER ID=root;PWD="))
-            {
-                con.Open();
-                foreach (var row in dados)
+                StreamReader sr = new StreamReader(@"C:\IHMHR\pesquisa.txt");
+                string[] texto = sr.ReadLine().Split(';');
+                #region Tentado fazer
+                //char[] spliter = {'|', ';'};
+                //string[] valores = new string[2000];
+                /*List<string> valores = new List<string>();
+                foreach (var item in texto)
                 {
-                    MySqlCommand com = new MySqlCommand(row,con);
-                    if (con.State == System.Data.ConnectionState.Open)
-                    {
-                        try
-                        {
-                            com.ExecuteNonQuery();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message.ToString());
-                        }
-                    }   
+                    //valores[contador] = item;
+                    valores.Add(item);
+                }*/
+                //sql = "INSERT INTO info VALUES (NULL,'+" valores[1] + "','" + valores[2] + "','" + valores[3].Replace("'", "~") + "','" + valores[4] + "','" + valores[5] + "','" + valores[6] + "')";    
+                /*sql = "INSERT INTO info VALUES ";
+                for (int i = 0; i < ((valores.Count-1) /6); i++)
+                {
+                    sql += "(NULL,";
+                    sql += "'" + valores[i] + "',";
+                    sql += "'" + valores[i + 1] + "',";
+                    sql += "'" + valores[i + 2].Replace("'", "~").Replace("´", "~") + "',";
+                    sql += "'" + valores[i + 3] + "',";
+                    sql += "'" + valores[i + 4] + "',";
+                    sql += "'" + valores[i + 5] + "'";
+                    sql += "),";
                 }
+                sql = sql.Substring(0, sql.Length - 1);
+                MessageBox.Show(sql);
+                Clipboard.SetText(sql);*/
+                #endregion
+                List<string> dados = CriarQuery(texto);
+                using (MySqlConnection con = new MySqlConnection("SERVER=127.0.0.1;DATABASE=relatorio;USER ID=root;PWD="))
+                {
+                    con.Open();
+                    foreach (var row in dados)
+                    {
+                        MySqlCommand com = new MySqlCommand(row, con);
+                        if (con.State == System.Data.ConnectionState.Open)
+                        {
+                            try
+                            {
+                                com.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message.ToString());
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Acesso ao banco de dados MySql esta fechado", "Erro Acesso MySql", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Erro Form1 Load", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                /*if (apagar)
+                {
+                    System.Diagnostics.Process.Start(@"cd ..");
+                    System.Diagnostics.Process.Start(@"cd ..");
+                    System.Diagnostics.Process.Start(@"cd ..");
+                    System.Diagnostics.Process.Start(@"cd IHMHR");
+                    System.Diagnostics.Process.Start(@"del txt.txt");
+
+                }*/
             }
         }
 
@@ -88,7 +108,7 @@ namespace IHMHR_System
                         sql += "'" + fila[0] + "',";
                         sql += "'" + fila[1] + "',";
                         sql += "'" + fila[2].Replace("'", "~") + "',";
-                        sql += "'" + fila[3].Replace(":", "") + "',";/**/
+                        sql += "'" + fila[3].Replace(":", "") + "',";
                         sql += "'" + fila[4] + "',";
                         sql += "'" + Convert.ToDateTime(fila[5]).ToString("yyyy-MM-dd HH:MM:ss") + "'";
                         sql += ")";

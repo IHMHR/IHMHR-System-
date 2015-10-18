@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
-using System.Data.OleDb;
 
 namespace IHMHR_System
 {
@@ -34,11 +33,12 @@ namespace IHMHR_System
         {
             try
             {
-                Excel();
-                /*using (SqlConnection con = new SqlConnection(@"Data Source=MARTINELLI-07\SQLEXPRESS;Initial Catalog=SS;Integrated Security=True"))
+                //Excel();
+                using (SqlConnection con = new SqlConnection(@"Data Source=MARTINELLI-07\SQLEXPRESS;Initial Catalog=SS;Integrated Security=True"))
                 {
-                    string sql = "SELECT TOP 30 Chamado AS [Numero do Chamado],Desc_Chamado AS [Descrição do Chamado],Desc_detalhada AS [Detalhes do Chamado],Causa,resolucao AS Resolução,sintoma AS Sintoma,Resposta_cliente AS [Resposta ao Cliente],[Solucionador por] AS [Analista responsável] FROM Plan1$ WHERE Chamado IS NOT NULL AND resolucao IS NOT NULL AND Resposta_cliente IS NOT NULL AND ";
+                    string sql = "SELECT TOP 50 Chamado AS [Numero do Chamado],Desc_Chamado AS [Descrição do Chamado],Desc_detalhada AS [Detalhes do Chamado],Causa,resolucao AS Resolução,sintoma AS Sintoma,Resposta_cliente AS [Resposta ao Cliente],[Solucionador por] AS [Analista responsável] FROM Plan1$ WHERE Chamado IS NOT NULL AND resolucao IS NOT NULL AND Resposta_cliente IS NOT NULL AND ";
                     sql = sql + FormatarLike(MyProperty, false);
+                    sql += " ORDER BY Chamado DESC";
                     comando = sql;
 
                     DataSet ds = new DataSet();
@@ -53,7 +53,7 @@ namespace IHMHR_System
                         FrmMain mm = new FrmMain();
                         mm.Show();
                     }
-                }*/
+                }
             }
             catch (Exception)// ex)
             {
@@ -105,21 +105,21 @@ namespace IHMHR_System
             try
             {
                 //MessageBox.Show(dataGridView1.CurrentCell.Value.ToString());
-                MessageBox.Show(dataGridView1.CurrentRow.Cells["Descrição do Chamado"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n" +
-                                dataGridView1.CurrentRow.Cells["Detalhes do Chamado"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n" +
-                                dataGridView1.CurrentRow.Cells["Resposta ao cliente"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n\n" +
-                                dataGridView1.CurrentRow.Cells["Causa"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n" +
-                                dataGridView1.CurrentRow.Cells["resolução"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n"
+                MessageBox.Show(dataGridView1.CurrentRow.Cells["Descrição do Chamado"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n" +
+                                dataGridView1.CurrentRow.Cells["Detalhes do Chamado"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n" +
+                                dataGridView1.CurrentRow.Cells["Resposta ao cliente"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n\n" +
+                                dataGridView1.CurrentRow.Cells["Causa"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n" +
+                                dataGridView1.CurrentRow.Cells["resolução"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n"
                                 );
             }
             catch (Exception)// ex)
             {
                 //MessageBox.Show(ex.Message.ToString(), "Erro Dvg CellContentClick", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show(dataGridView1.CurrentRow.Cells["Desc_Chamado"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n" +
-                                dataGridView1.CurrentRow.Cells["Desc_detalhada"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n" +
-                                dataGridView1.CurrentRow.Cells["Resposta_cliente"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n\n" +
-                                dataGridView1.CurrentRow.Cells["Causa"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n" +
-                                dataGridView1.CurrentRow.Cells["resolucao"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n") + "\n\n"
+                MessageBox.Show(dataGridView1.CurrentRow.Cells["Desc_Chamado"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n" +
+                                dataGridView1.CurrentRow.Cells["Desc_detalhada"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n" +
+                                dataGridView1.CurrentRow.Cells["Resposta_cliente"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n\n" +
+                                dataGridView1.CurrentRow.Cells["Causa"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n" +
+                                dataGridView1.CurrentRow.Cells["resolucao"].Value.ToString().Replace("<!-- RICH TEXT -->", "").Replace("</ br>", "/n").Replace("<br />", "\n").Replace("<div>", "").Replace("</div>", "").Replace(@"<\div>", "") + "\n\n"
                                 );
             }
         }
@@ -140,7 +140,7 @@ namespace IHMHR_System
         {
             DataSet ds = new DataSet();
             string cnnString = String.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=""Excel 12.0 Xml;HDR=YES;""", @"C:\IHMHR\BaseConhecimento.xlsx");//@"C:\Users\Martinelli\Desktop\N8\Projeto Base de conhecimento\Base de Conhecimento\Base de Conhecimento\bin\Debug\BaseConhecimento.xlsx");
-            string isql = "SELECT TOP 30 Chamado AS [Numero do Chamado],Desc_Chamado AS [Descrição do Chamado],Desc_detalhada AS [Detalhes do Chamado],Causa,resolucao AS [Resolução],sintoma AS [Sintoma],Resposta_cliente AS [Resposta ao Cliente],[Solucionador por] AS [Analista responsável] FROM [{0}$] WHERE chamado IS NOT NULL AND resolucao IS NOT NULL AND Resposta_cliente IS NOT NULL AND " + FormatarLike(MyProperty, false);
+            string isql = "SELECT TOP 50 Chamado AS [Numero do Chamado],Desc_Chamado AS [Descrição do Chamado],Desc_detalhada AS [Detalhes do Chamado],Causa,resolucao AS [Resolução],sintoma AS [Sintoma],Resposta_cliente AS [Resposta ao Cliente],[Solucionador por] AS [Analista responsável] FROM [{0}$] WHERE chamado IS NOT NULL AND resolucao IS NOT NULL AND Resposta_cliente IS NOT NULL AND " + FormatarLike(MyProperty, false) + " ORDER BY Chamado DESC";
             System.Data.OleDb.OleDbConnection cnn = new System.Data.OleDb.OleDbConnection(cnnString);
             System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(String.Format(isql, "Plan1"), cnn);
             comando = String.Format(isql, "Plan1");
@@ -166,7 +166,7 @@ namespace IHMHR_System
 
         private void FrmSolucoes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            sw = File.AppendText(@"C:\IHMHR\txt.txt");
+            sw = File.AppendText(@"C:\IHMHR\pesquisa.txt");
             sw.Write(System.Environment.UserName + "|");
             sw.Write(MyProperty + "|");
             sw.Write(comando + "|");
