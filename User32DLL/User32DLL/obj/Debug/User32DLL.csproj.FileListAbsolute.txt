@@ -1,0 +1,9 @@
+c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\User32DLL\bin\Debug\User32DLL.exe.config
+c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\User32DLL\bin\Debug\User32DLL.exe
+c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\User32DLL\bin\Debug\User32DLL.pdb
+c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\User32DLL\obj\Debug\User32DLL.csprojResolveAssemblyReference.cache
+c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\User32DLL\obj\Debug\User32DLL.Form1.resources
+c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\User32DLL\obj\Debug\User32DLL.Properties.Resources.resources
+c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\User32DLL\obj\Debug\User32DLL.csproj.GenerateResource.Cache
+c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\User32DLL\obj\Debug\User32DLL.exe
+c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\User32DLL\obj\Debug\User32DLL.pdb
