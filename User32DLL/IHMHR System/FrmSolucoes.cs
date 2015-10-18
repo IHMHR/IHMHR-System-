@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
+using System.Data.OleDb;
 
 namespace IHMHR_System
 {
@@ -34,7 +35,7 @@ namespace IHMHR_System
             try
             {
                 Excel();
-                using (SqlConnection con = new SqlConnection(@"Data Source=MARTINELLI-07\SQLEXPRESS;Initial Catalog=SS;Integrated Security=True"))
+                /*using (SqlConnection con = new SqlConnection(@"Data Source=MARTINELLI-07\SQLEXPRESS;Initial Catalog=SS;Integrated Security=True"))
                 {
                     string sql = "SELECT TOP 30 Chamado AS [Numero do Chamado],Desc_Chamado AS [Descrição do Chamado],Desc_detalhada AS [Detalhes do Chamado],Causa,resolucao AS Resolução,sintoma AS Sintoma,Resposta_cliente AS [Resposta ao Cliente],[Solucionador por] AS [Analista responsável] FROM Plan1$ WHERE Chamado IS NOT NULL AND resolucao IS NOT NULL AND Resposta_cliente IS NOT NULL AND ";
                     sql = sql + FormatarLike(MyProperty, false);
@@ -52,7 +53,7 @@ namespace IHMHR_System
                         FrmMain mm = new FrmMain();
                         mm.Show();
                     }
-                }
+                }*/
             }
             catch (Exception)// ex)
             {
@@ -135,13 +136,11 @@ namespace IHMHR_System
                 MessageBox.Show(ex.Message.ToString(), "Erro Button1 Click", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void Excel()
         {
             DataSet ds = new DataSet();
             string cnnString = String.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=""Excel 12.0 Xml;HDR=YES;""", @"C:\IHMHR\BaseConhecimento.xlsx");//@"C:\Users\Martinelli\Desktop\N8\Projeto Base de conhecimento\Base de Conhecimento\Base de Conhecimento\bin\Debug\BaseConhecimento.xlsx");
-
-            string isql = "SELECT TOP 1 * FROM [{0}$] WHERE chamado IS NOT NULL and ticketuid IS NOT NULL and Desc_detalhada IS NOT NULL and " + FormatarLike(MyProperty,false);
+            string isql = "SELECT TOP 30 Chamado AS [Numero do Chamado],Desc_Chamado AS [Descrição do Chamado],Desc_detalhada AS [Detalhes do Chamado],Causa,resolucao AS [Resolução],sintoma AS [Sintoma],Resposta_cliente AS [Resposta ao Cliente],[Solucionador por] AS [Analista responsável] FROM [{0}$] WHERE chamado IS NOT NULL AND resolucao IS NOT NULL AND Resposta_cliente IS NOT NULL AND " + FormatarLike(MyProperty, false);
             System.Data.OleDb.OleDbConnection cnn = new System.Data.OleDb.OleDbConnection(cnnString);
             System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(String.Format(isql, "Plan1"), cnn);
             comando = String.Format(isql, "Plan1");

@@ -1,10 +1,13 @@
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\bin\Debug\IHMHR System.exe.config
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\bin\Debug\IHMHR System.exe
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\bin\Debug\IHMHR System.pdb
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmMain.resources
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.Properties.Resources.resources
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.csproj.GenerateResource.Cache
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.exe
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.pdb
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.csprojResolveAssemblyReference.cache
-c:\users\martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmSolucoes.resources
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\bin\Debug\IHMHR System.exe.config
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\bin\Debug\IHMHR System.exe
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\bin\Debug\IHMHR System.pdb
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\bin\Debug\MySql.Data.dll
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.csprojResolveAssemblyReference.cache
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.Form1.resources
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmMain.resources
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmSolucoes.resources
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.Properties.Resources.resources
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.csproj.GenerateResource.Cache
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.exe
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR System.pdb
+C:\Users\Martinelli\documents\visual studio 2013\Projects\User32DLL\IHMHR System\obj\Debug\IHMHR_System.FrmDecisoes.resources

@@ -183,6 +183,7 @@
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
+            this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
             // 
             // listBox1
             // 
@@ -202,6 +203,7 @@
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
+            this.label5.DoubleClick += new System.EventHandler(this.label5_DoubleClick);
             // 
             // FrmMain
             // 

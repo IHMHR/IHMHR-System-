@@ -291,9 +291,9 @@ namespace IHMHR_System
         {
             try
             {
-            textBox5.Visible = !textBox5.Visible;
-            textBox5.Focus();
-            label5.Visible = !label5.Visible;
+                textBox5.Visible = !textBox5.Visible;
+                textBox5.Focus();
+                label5.Visible = !label5.Visible;
             }
             catch (Exception ex)
             {
@@ -305,9 +305,12 @@ namespace IHMHR_System
         {
             try
             {
-            this.Hide();
-            FrmSolucoes sol = new FrmSolucoes(textBox5.Text);
-            sol.Show();
+                if (textBox5.Text != "")
+                {
+                    this.Hide();
+                    FrmSolucoes sol = new FrmSolucoes(textBox5.Text);
+                    sol.Show();
+                }
             }
             catch (Exception ex)
             {
@@ -321,20 +324,54 @@ namespace IHMHR_System
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    this.Hide();
-                    FrmSolucoes sol = new FrmSolucoes(textBox5.Text);
-                    sol.Show();
+                    if (textBox5.Text != "")
+                    {
+                        this.Hide();
+                        FrmSolucoes sol = new FrmSolucoes(textBox5.Text);
+                        sol.Show();    
+                    }
                 }
                 else if (e.KeyCode == Keys.Tab)
                 {
-                    this.Hide();
-                    FrmSolucoes sol = new FrmSolucoes(textBox5.Text);
-                    sol.Show();
+                    if (textBox5.Text != "")
+                    {
+                        this.Hide();
+                        FrmSolucoes sol = new FrmSolucoes(textBox5.Text);
+                        sol.Show();
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString(), "Erro Txt5 Key Down", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label5_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                FrmDecisoes tom = new FrmDecisoes();
+                tom.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Erro Label5 dblClick", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label4_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                Hide();
+                Form1 ff = new Form1();
+                ff.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Erro Label4d blClick", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
